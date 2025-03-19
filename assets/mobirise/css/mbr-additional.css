@@ -775,11 +775,6 @@ a {
 }
 .cid-uCtTcxBPgn {
   display: flex;
-  background-image: url("../../../assets/images/background17.jpg");
-}
-.cid-uCtTcxBPgn .mbr-overlay {
-  background-color: #000000;
-  opacity: 0.5;
 }
 @media (min-width: 768px) {
   .cid-uCtTcxBPgn {
@@ -817,6 +812,7 @@ a {
 .cid-uCtTcxBPgn .mbr-text,
 .cid-uCtTcxBPgn .mbr-section-btn {
   text-align: center;
+  color: #393193;
 }
 .cid-uDNJOlj0ll {
   padding-top: 6rem;
