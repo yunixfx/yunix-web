@@ -12,7 +12,11 @@
 </script>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#000000">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="shortcut icon" href="asset/images/turq-16x16.png" type="image/x-icon">
   <meta name="description" content="Social AR filters and effects for TikTok, Instagram, and social media platforms. Over 1.26 billion views and 120 million tries worldwide.">
   
@@ -34,10 +38,256 @@
       align-items: center;
       color: white;
     }
-    .carousel-item img {
+    
+    /* Multi-item carousel styles */
+    .multi-item-carousel .carousel-inner {
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    .multi-item-carousel .carousel-item {
+      transition: transform 0.6s ease-in-out;
+    }
+    
+    .multi-item-carousel .carousel-item .row {
+      display: flex;
+      flex-wrap: nowrap;
+      margin: 0 -15px;
+      width: 100%;
+    }
+    
+    .multi-item-carousel .carousel-item .col-12 {
+      flex: 0 0 auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+    
+    .multi-item-carousel .carousel-item img {
       max-height: 500px;
       object-fit: contain;
       margin: 0 auto;
+      width: 100%;
+      height: auto;
+    }
+    
+    /* Ensure proper spacing and alignment */
+    .multi-item-carousel .carousel-item .col-12 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* Comprehensive responsive breakpoints */
+    /* Mobile First Approach - Base styles for mobile */
+    .multi-item-carousel .carousel-item .row {
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+    
+    .multi-item-carousel .carousel-item .col-12 {
+      flex: 0 0 100%;
+      padding: 0 10px;
+      margin-bottom: 15px;
+    }
+    
+    .multi-item-carousel .carousel-item .col-12:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+      .multi-item-carousel .carousel-item .col-12 {
+        flex: 0 0 50%;
+        margin-bottom: 20px;
+      }
+      
+      .multi-item-carousel .carousel-item .row {
+        margin: 0 -15px;
+      }
+      
+      .multi-item-carousel .carousel-item .col-12 {
+        padding: 0 15px;
+      }
+    }
+    
+    /* Medium devices (tablets, 768px and up) */
+    @media (min-width: 768px) {
+      .multi-item-carousel .carousel-item .col-12 {
+        flex: 0 0 33.333%;
+        margin-bottom: 0;
+      }
+      
+      .multi-item-carousel .carousel-item .row {
+        flex-wrap: nowrap;
+        margin: 0 -15px;
+      }
+    }
+    
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) {
+      .multi-item-carousel .carousel-item .col-12 {
+        flex: 0 0 25%;
+      }
+    }
+    
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {
+      .multi-item-carousel .carousel-item .col-12 {
+        flex: 0 0 20%;
+      }
+    }
+    
+    /* 4K and very large screens */
+    @media (min-width: 1600px) {
+      .multi-item-carousel .carousel-item .col-12 {
+        flex: 0 0 16.666%;
+      }
+    }
+    
+    /* Responsive Typography */
+    .content-head h3 {
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+    
+    .content-head h5 {
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+    
+    @media (min-width: 576px) {
+      .content-head h3 {
+        font-size: 2.25rem;
+      }
+      
+      .content-head h5 {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .content-head h3 {
+        font-size: 2.5rem;
+      }
+      
+      .content-head h5 {
+        font-size: 1.3rem;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      .content-head h3 {
+        font-size: 3rem;
+      }
+      
+      .content-head h5 {
+        font-size: 1.4rem;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .content-head h3 {
+        font-size: 3.5rem;
+      }
+      
+      .content-head h5 {
+        font-size: 1.5rem;
+      }
+    }
+    
+    /* Ensure carousel controls are properly positioned */
+    .multi-item-carousel .carousel-control-prev,
+    .multi-item-carousel .carousel-control-next {
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.3);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    
+    @media (max-width: 767px) {
+      .multi-item-carousel .carousel-control-prev,
+      .multi-item-carousel .carousel-control-next {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    
+    /* Carousel indicators styling */
+    .multi-item-carousel .carousel-indicators {
+      bottom: -50px;
+      gap: 8px;
+    }
+    
+    .multi-item-carousel .carousel-indicators button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid #000;
+      background-color: transparent;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+    }
+    
+    .multi-item-carousel .carousel-indicators button.active {
+      background-color: #000;
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    
+    @media (max-width: 767px) {
+      .multi-item-carousel .carousel-indicators {
+        bottom: -40px;
+        gap: 6px;
+      }
+      
+      .multi-item-carousel .carousel-indicators button {
+        width: 10px;
+        height: 10px;
+        margin: 0 3px;
+      }
+    }
+    
+    /* Responsive image scaling */
+    .multi-item-carousel .carousel-item img {
+      max-height: 500px;
+      object-fit: contain;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+    
+    .multi-item-carousel .carousel-item img:hover {
+      transform: scale(1.05);
+    }
+    
+    @media (max-width: 767px) {
+      .multi-item-carousel .carousel-item img {
+        max-height: 400px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .multi-item-carousel .carousel-item img {
+        max-height: 350px;
+      }
+    }
+    
+    /* Touch-friendly interactive elements */
+    @media (max-width: 1024px) {
+      .multi-item-carousel .carousel-control-prev,
+      .multi-item-carousel .carousel-control-next {
+        min-width: 44px;
+        min-height: 44px;
+      }
+      
+      .multi-item-carousel .carousel-indicators button {
+        min-width: 44px;
+        min-height: 44px;
+      }
     }
   </style>
 </head>
@@ -65,6 +315,49 @@
       </div>
     </div>
   </nav>
+  
+  <style>
+    /* Responsive navigation enhancements */
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    
+    .nav-link {
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+    
+    @media (max-width: 991px) {
+      .navbar-collapse {
+        background-color: #343a40;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        margin-top: 0.5rem;
+      }
+      
+      .nav-link {
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .nav-link:last-child {
+        border-bottom: none;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .navbar-brand {
+        font-size: 1.25rem;
+      }
+      
+      .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+  </style>
 
   <!-- Header Section -->
   <section class="header-section">
@@ -90,41 +383,39 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <div id="tiktokCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+          <div id="tiktokCarousel" class="carousel slide multi-item-carousel" data-bs-ride="carousel" data-bs-interval="5000" data-visible="3">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="d-flex justify-content-center">
-                  <a href="https://vm.tiktok.com/ZMkwSNtxh/" target="_blank">
-                    <img src="asset/images/0725-short-ezgif.com-resize.gif" class="d-block" alt="Cat Name Anime Language" style="max-height: 500px;">
-                  </a>
+                <div class="row">
+                  <div class="col-12 col-md-4">
+                    <a href="https://vm.tiktok.com/ZMkwSNtxh/" target="_blank">
+                      <img src="asset/images/0725-short-ezgif.com-resize.gif" class="d-block w-100" alt="Cat Name Anime Language" style="max-height: 500px;">
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <a href="https://vm.tiktok.com/ZMkwSnuGw/" target="_blank">
+                      <img src="asset/images/ppplaysnow-1.gif" class="d-block w-100" alt="SnowBall Dodge" style="max-height: 500px;">
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <a href="https://www.tiktok.com/effect/APT-Rose-Bruno-Mars-Kpop-1068669969?is_from_webapp=1&sender_device=pc" target="_blank">
+                      <img src="asset/images/apt-ezgif.com-resize.gif" class="d-block w-100" alt="APT" style="max-height: 500px;">
+                    </a>
+                  </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <a href="https://vm.tiktok.com/ZMkwSnuGw/" target="_blank">
-                    <img src="asset/images/ppplaysnow-1.gif" class="d-block" alt="SnowBall Dodge" style="max-height: 500px;">
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <a href="https://www.tiktok.com/effect/APT-Rose-Bruno-Mars-Kpop-1068669969?is_from_webapp=1&sender_device=pc" target="_blank">
-                    <img src="asset/images/apt-ezgif.com-resize.gif" class="d-block" alt="APT" style="max-height: 500px;">
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <a href="https://vm.tiktok.com/ZMkwSod1A/" target="_blank">
-                    <img src="asset/images/huatlah-1.gif" class="d-block" alt="CNY Lucky Rabbit 888" style="max-height: 500px;">
-                  </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="d-flex justify-content-center">
-                  <a href="https://vm.tiktok.com/ZMkwAq73Y/" target="_blank">
-                    <img src="asset/images/download19-ezgif.com-resize.gif" class="d-block" alt="NDP Fun Hat" style="max-height: 500px;">
-                  </a>
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <a href="https://vm.tiktok.com/ZMkwSod1A/" target="_blank">
+                      <img src="asset/images/huatlah-1.gif" class="d-block w-100" alt="CNY Lucky Rabbit 888" style="max-height: 500px;">
+                    </a>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <a href="https://vm.tiktok.com/ZMkwAq73Y/" target="_blank">
+                      <img src="asset/images/download19-ezgif.com-resize.gif" class="d-block w-100" alt="NDP Fun Hat" style="max-height: 500px;">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -470,6 +761,113 @@
 
   <script src="asset/js/bootstrap.bundle.min.js"></script>
   
-  
+  <script>
+    // Multi-item carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousel = document.getElementById('tiktokCarousel');
+      if (!carousel) return;
+      
+      // Initialize multi-item carousel
+      initMultiItemCarousel(carousel);
+      
+      // Handle window resize for responsive adjustments
+      window.addEventListener('resize', function() {
+        initMultiItemCarousel(carousel);
+      });
+    });
+    
+    function initMultiItemCarousel(carousel) {
+      const itemsPerSlide = getItemsPerSlide();
+      const items = carousel.querySelectorAll('.carousel-item');
+      
+      // Update carousel indicators if they exist
+      updateCarouselIndicators(carousel, items.length);
+      
+      // Add accessibility attributes
+      enhanceCarouselAccessibility(carousel, itemsPerSlide);
+    }
+    
+    function getItemsPerSlide() {
+      const width = window.innerWidth;
+      if (width >= 1600) return 6;  // 4K and very large screens
+      if (width >= 1200) return 5;  // xl screens
+      if (width >= 992) return 4;   // lg screens
+      if (width >= 768) return 3;   // md screens
+      if (width >= 576) return 2;   // sm screens
+      return 1;                    // xs screens
+    }
+    
+    function updateCarouselIndicators(carousel, totalItems) {
+      let indicatorsContainer = carousel.querySelector('.carousel-indicators');
+      
+      if (!indicatorsContainer) {
+        // Create indicators if they don't exist
+        indicatorsContainer = document.createElement('div');
+        indicatorsContainer.className = 'carousel-indicators';
+        carousel.querySelector('.carousel-inner').after(indicatorsContainer);
+      }
+      
+      // Clear existing indicators
+      indicatorsContainer.innerHTML = '';
+      
+      // Add new indicators
+      for (let i = 0; i < totalItems; i++) {
+        const indicator = document.createElement('button');
+        indicator.type = 'button';
+        indicator.setAttribute('data-bs-target', '#tiktokCarousel');
+        indicator.setAttribute('data-bs-slide-to', i);
+        indicator.setAttribute('aria-label', 'Slide ' + (i + 1));
+        
+        if (i === 0) {
+          indicator.className = 'active';
+          indicator.setAttribute('aria-current', 'true');
+        }
+        
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+    
+    function enhanceCarouselAccessibility(carousel, itemsPerSlide) {
+      const items = carousel.querySelectorAll('.carousel-item');
+      
+      items.forEach((item, index) => {
+        item.setAttribute('aria-roledescription', 'slide');
+        item.setAttribute('aria-label', 'Slide ' + (index + 1) + ' of ' + items.length);
+        
+        // Add role="group" to item containers for screen readers
+        const itemContainers = item.querySelectorAll('.col-12');
+        itemContainers.forEach(container => {
+          container.setAttribute('role', 'group');
+          container.setAttribute('aria-label', 'Carousel item group');
+        });
+      });
+      
+      // Update navigation buttons accessibility
+      const prevButton = carousel.querySelector('.carousel-control-prev');
+      const nextButton = carousel.querySelector('.carousel-control-next');
+      
+      if (prevButton) {
+        prevButton.setAttribute('aria-label', 'Previous slides');
+      }
+      
+      if (nextButton) {
+        nextButton.setAttribute('aria-label', 'Next slides');
+      }
+    }
+    
+    // Handle keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      const activeCarousel = document.querySelector('.carousel-item.active');
+      if (!activeCarousel) return;
+      
+      if (e.key === 'ArrowLeft') {
+        const prevButton = activeCarousel.closest('.carousel').querySelector('.carousel-control-prev');
+        prevButton?.click();
+      } else if (e.key === 'ArrowRight') {
+        const nextButton = activeCarousel.closest('.carousel').querySelector('.carousel-control-next');
+        nextButton?.click();
+      }
+    });
+  </script>
 </body>
 </html>
