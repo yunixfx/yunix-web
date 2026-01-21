@@ -1284,7 +1284,7 @@ a {
 }
 .cid-uCu0TvtOt5 .card-text {
   color: #000000;
-  text-align: left;
+  text-align: center;
 }
 .cid-uCu0TvtOt5 .content-head {
   max-width: 800px;
@@ -1475,4 +1475,24 @@ a {
 }
 .cid-uD37GzMOoV .card-title {
   text-align: left;
+}
+.cid-uHEUprdThQ {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #ffffff;
+}
+.cid-uHEUprdThQ .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uHEUprdThQ .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-uHEUprdThQ .row {
+  flex-direction: row-reverse;
 }
